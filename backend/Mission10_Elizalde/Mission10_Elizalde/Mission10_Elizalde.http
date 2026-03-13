@@ -1,0 +1,6 @@
+@Mission10_Elizalde_HostAddress = http://localhost:5156
+
+GET {{Mission10_Elizalde_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

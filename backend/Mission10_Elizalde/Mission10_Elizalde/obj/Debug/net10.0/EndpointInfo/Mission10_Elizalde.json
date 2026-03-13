@@ -1,0 +1,218 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "Mission10_Elizalde | v1",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://localhost:5050"
+    },
+    {
+      "url": "http://localhost:2000"
+    }
+  ],
+  "paths": {
+    "/BowlingInfo": {
+      "get": {
+        "tags": [
+          "BowlingInfo"
+        ],
+        "operationId": "GetBowlingInfo",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BowlingInfo"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BowlingInfo"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BowlingInfo"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WeatherForecast": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "operationId": "GetWeatherForecast",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BowlingInfo": {
+        "required": [
+          "bowlerLastName",
+          "bowlerFirstName",
+          "bowlerAddress",
+          "bowlerCity",
+          "bowlerState",
+          "bowlerZip",
+          "bowlerPhoneNumber",
+          "teamID"
+        ],
+        "type": "object",
+        "properties": {
+          "bowlerId": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "bowlerLastName": {
+            "type": "string"
+          },
+          "bowlerFirstName": {
+            "type": "string"
+          },
+          "bowlerMiddleInit": {
+            "maxLength": 1,
+            "minLength": 1,
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "char"
+          },
+          "bowlerAddress": {
+            "type": "string"
+          },
+          "bowlerCity": {
+            "type": "string"
+          },
+          "bowlerState": {
+            "type": "string"
+          },
+          "bowlerZip": {
+            "type": "string"
+          },
+          "bowlerPhoneNumber": {
+            "type": "string"
+          },
+          "teamID": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "team": {
+            "$ref": "#/components/schemas/Team"
+          }
+        }
+      },
+      "Team": {
+        "type": "object",
+        "properties": {
+          "teamID": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "teamName": {
+            "type": "string"
+          }
+        }
+      },
+      "WeatherForecast": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "temperatureC": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "temperatureF": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "summary": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "BowlingInfo"
+    },
+    {
+      "name": "WeatherForecast"
+    }
+  ]
+}
