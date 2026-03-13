@@ -1,10 +1,16 @@
 import { useEffect, useState } from 'react';
+
+// Importing the bowler type from the types folder
 import type { bowler } from './types/bowler';
+
+// Table of bowlers
 
 function BowlerList() {
 
+    // Making a state to hold the bowlers data
     const [bowlers, setBowlers] = useState<bowler[]>([]);
 
+    // Fetching the bowlers data from the API when the component mounts
     useEffect(() => {
         const fetchBowler = async () => {
             const response = await fetch('https://localhost:5050/BowlingInfo');
@@ -14,6 +20,7 @@ function BowlerList() {
         fetchBowler();
     }, [])
     
+    // table to display the bowlers data
     return (
         <>
             <div className="table-container">

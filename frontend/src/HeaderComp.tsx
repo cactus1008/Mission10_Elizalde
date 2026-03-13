@@ -1,3 +1,5 @@
+// Header component to display the page header and description
+
 function HeaderComp() {
     return (
         <div className="page-header">

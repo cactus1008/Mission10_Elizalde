@@ -20,6 +20,7 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
+// Allowing CORS for the React app to access the API
 app.UseCors(x => x.WithOrigins("http://localhost:2001"));
 
 app.UseHttpsRedirection();

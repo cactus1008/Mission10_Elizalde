@@ -11,6 +11,7 @@ namespace Mission10_Elizalde.Data
         public string BowlerLastName { get; set; }
         [Required]
         public string BowlerFirstName { get; set; }
+        // Not required because some bowlers may not have a middle initial
         public char? BowlerMiddleInit { get; set; }
         [Required]
         public string BowlerAddress { get; set; }
